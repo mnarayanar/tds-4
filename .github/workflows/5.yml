@@ -1,10 +1,17 @@
 name: Daily Commit
 
 on:
+  # Run the first time within a few minutes after the workflow is added or updated
+  push:
+    branches:
+      - main  # Change if your default branch is different
+
+  # Run daily at 12:00 AM IST (which is 6:30 PM UTC the previous day)
   schedule:
-    # Run daily at 12:00 AM IST, which is 6:30 PM UTC (previous day)
     - cron: '30 18 * * *'
-  workflow_dispatch: # Allows you to trigger the action manually
+
+  # Allows manual trigger
+  workflow_dispatch: 
 
 jobs:
   commit:
@@ -21,7 +28,6 @@ jobs:
 
     - name: Create a commit
       run: |
-        # Create or modify a file to trigger a commit
         echo "Daily update: $(date)" >> daily_commit.txt
         git add daily_commit.txt
         git commit -m "Daily commit by GitHub Actions"
