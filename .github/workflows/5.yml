@@ -16,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: miryala.narayanareddy@straive.com
+      run:
+        echo "Hello, world!"
     - name: Checkout repository miryala.narayanareddy@straive.com
       uses: actions/checkout@v2
       with:
