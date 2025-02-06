@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout repository miryala.narayanareddy@straive.com
       uses: actions/checkout@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
